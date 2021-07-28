@@ -11,6 +11,41 @@ alias b='cd -'
 alias c='clear'
 #PS1='[\u@\h \W]\$ '
 
+distro_name=( AIX  Hash  Alpine  AlterLinux  Amazon  AmogOS  Anarchy  Android  instantOS 
+       Antergos  antiX  "AOSC OS"  "AOSC OS/Retro"  Apricity  ArchCraft 
+       ArcoLinux  ArchBox  ARCHlabs  ArchStrike  XFerience  ArchMerge  Arch 
+       Artix  Arya  Bedrock  Bitrig  BlackArch  BLAG  BlankOn  BlueLight 
+       bonsai  BSD  BunsenLabs  Calculate  Carbs  CentOS  Chakra  ChaletOS 
+       Chapeau  Chrom*  Cleanjaro  ClearOS  Clear_Linux  Clover  Condres 
+       Container_Linux  CrystalUX  CRUX  Cucumber  dahlia  Debian  Deepin 
+       DesaOS  Devuan  DracOS  DarkOs  Itc  DragonFly  Drauger  Elementary 
+       EndeavourOS  Endless  EuroLinux  Exherbo  Fedora  Feren  FreeBSD 
+       FreeMiNT  Frugalware  Funtoo  GalliumOS  Garuda  Gentoo  Pentoo 
+       gNewSense  GNOME  GNU  GoboLinux  Grombyang  Guix  Haiku  Huayra  HydroOS
+       Hyperbola  iglunix  janus  Kali  KaOS  KDE_neon  Kibojoe  Kogaion  Korora 
+       KSLinux  Kubuntu  LEDE  LaxerOS  LibreELEC  LFS  Linux_Lite  LMDE 
+       Lubuntu  Lunar  macos  Mageia  MagpieOS  Mandriva  Manjaro  TeArch  Maui 
+       Mer  Minix  LinuxMint  Live_Raizo  MX_Linux  Namib  Neptune  NetBSD 
+       Netrunner  Nitrux  NixOS  Nurunner  NuTyX  OBRevenge  OpenBSD 
+       openEuler  OpenIndiana  openmamba  OpenMandriva  OpenStage  OpenWrt 
+       osmc  Oracle  OS Elbrus  PacBSD  Parabola  Pardus  Parrot  Parsix 
+       TrueOS  PCLinuxOS  Pengwin  Peppermint  Pisi  popos  Porteus  PostMarketOS 
+       Proxmox  PuffOS  Puppy  PureOS  Qubes  Quibian  Radix  Raspbian 
+       Reborn_OS  Redstar  Redcore  Redhat  Refracted_Devuan  Regata  Regolith 
+       Rocky  Rosa  sabotage  Sabayon  Sailfish  SalentOS  Scientific  Septor 
+       SereneLinux  SharkLinux  Siduction  SkiffOS  Slackware  SliTaz  SmartOS 
+       Solus  Source_Mage  Sparky  Star  SteamOS  SunOS  openSUSE_Leap  t2 
+       openSUSE_Tumbleweed  openSUSE  SwagArch  Tails  Trisquel 
+       Ubuntu-Cinnamon  Ubuntu-Budgie  Ubuntu-GNOME  Ubuntu-MATE 
+       Ubuntu-Studio  Ubuntu  Univention  Venom  Void  semc  Obarun 
+       windows10  Windows7  Xubuntu  Zorin IRIX Arch_old  Ubuntu_old  Redhat_old  Fedora_old  Dragonfly_old
+       Arcolinux_small  Dragonfly_small  Fedora_small  Alpine_small  Arch_small  Ubuntu_small 
+       CRUX_small  Debian_small  Gentoo_small  FreeBSD_small  Mac_small  NixOS_small  OpenBSD_small  android_small 
+       Artix_small  CentOS_small  Cleanjaro_small  ElementaryOS_small  GUIX_small  Hyperbola_small 
+       Manjaro_small  MXLinux_small  NetBSD_small  Parabola_small  POP_OS_small  PureOS_small 
+       Slackware_small  SunOS_small  LinuxLite_small  OpenSUSE_small  Raspbian_small 
+       postmarketOS_small  Void_small)
+
 countdown(){
     date1=$((`date +%s` + $1));
     while [ "$date1" -ge `date +%s` ]; do 
@@ -115,7 +150,7 @@ telltime() {
 
 #Entry Sequence
 clear
-#neofetch
+#neofetch --ascii_distro ${distro_name[ $((1 + $RANDOM % 246)) ]}
 PS1="\[\033[s\033[0;118H\033[0;44m\033[1;33m\d\033[0;40m:\033[0;41m\033[k\033[1;33m\t\033[0m\033[u\]\[\033[1;37m\]<\u@\h \w>\$ \[\033[0m\]"
 export PS1
 #Export PAgER="most"
